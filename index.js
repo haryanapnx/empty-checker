@@ -1,4 +1,4 @@
 const isEmpty = function (value) {
-   return (!value || 0 === value.length);
+   return (!value || value == "0" || 0 === value.length);
 }
 module.exports = isEmpty
