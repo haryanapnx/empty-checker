@@ -11,7 +11,13 @@
  * if value {null}, {undefined}, {0}, {''}
  * will returns true
  */
-const isEmpty = function (value) {
-   return (!value || value == "0" || 0 === value.length || Object.entries(value).length === 0 && value.constructor === Object);
+const isEmpty = function (value, myCb) {
+    var checker = (!value || value == "0" || 0 === value.length || Object.entries(value).length === 0 && value.constructor === Object);
+    if(typeof myCb == "function"){
+        return myCb(checker);  
+    } else {
+        return checker
+    }
 }
+
 module.exports = isEmpty
