@@ -12,13 +12,6 @@
  * will returns true
  */
 const isEmpty = function (value) {
-   if (!value || value === '0') { return true }
-   if (typeof value === 'object') {
-      for (var k in value) {
-         return false;
-      }
-      return true;
-   }
-   return false;
+   return (!value || value == "0" || 0 === value.length || Object.entries(value).length === 0 && value.constructor === Object);
 }
 module.exports = isEmpty
