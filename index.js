@@ -15,7 +15,7 @@ const isEmpty = function (value) {
    var remSpace = value.toString().replace(/\s/gi, "");
    return (
        !value ||
-       value == "0" ||
+       value === "0" ||
        0 === value.length ||
        Object.entries(value).length === 0 &&
        value.constructor === Object ||
